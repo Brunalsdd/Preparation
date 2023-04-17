@@ -1,0 +1,45 @@
+<p>home works!</p>
+
+
+<!--creating a list -->
+<table *ngFor =" let student of studentList">
+  <tr>
+    <td>Id:</td>
+    <td>{{student.id}}</td>
+    <td>Name:</td>
+    <td>{{student.name}}</td>
+  </tr>
+</table>
+<table >
+  <tr>
+    <td>Id:</td>
+    <td>course:</td>
+    <td>grade:</td>
+  </tr>
+  <tr *ngFor =" let grade of gradeList">
+    <td> {{grade.ID}} </td>
+    <td>
+      <input type="text" value="{{grade.course}}" id="course" [(ngModel)]="grade.course"/>
+    </td>
+    <td> <input type="text" value="{{grade.grade}}" id="grade" [(ngModel)]="grade.grade"/></td>
+    <td> <button (click)="putGrade(grade.ID, grade.course, grade.grade)" > edit </button> </td>
+    <td> <button (click)="deleteGrade(grade.ID)" > delete </button> </td>
+  </tr>
+</table>
+
+<table >
+  <tr>
+    <td>course:</td>
+    <td>grade:</td>
+  </tr>
+  <tr >
+    <td>
+      <input type="text" value="" [(ngModel)]="newGradeCourse" />
+    </td>
+    <td> <input type="text" value="" [(ngModel)]="newGrade" /></td>
+    <td> <button (click)="postGrade('1', newGradeCourse, newGrade)"> Add </button> </td>
+  </tr>
+</table>
+
+
+
